@@ -1,0 +1,6 @@
+{
+    "client": [
+	{"NOM": "Tremblay", "PRENOM :": "Jack", "ADRESSE_COURRIEL": "blabla@hotmail.com", "TELEPHONE": "514-555-9999", "EMPLOYEUR": "Bell", "APPARTEMENT_CHERCHE": "3 1/2"},
+	{"NOM": "Frank", "PRENOM :": "Adolf", "ADRESSE_COURRIEL": "brrebbre@hotmail.com", "TELEPHONE": "514-111-7777", "EMPLOYEUR": "STM", "APPARTEMENT_CHERCHE": "4 1/2"}
+
+    ]}

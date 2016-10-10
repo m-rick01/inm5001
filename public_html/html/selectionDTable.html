@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Display JSON File Data in Datatables | Example</title>
+    <!-- link datatables css -->
+    <link rel="stylesheet" type="text/css" href="../css/jquery.dataTables.css">
+    <link rel="stylesheet" type="text/css" href="../css/datatableEx1.css">
+    <link rel="stylesheet" type="text/css" href="/path/to/jquery.dataTables.css">
+    <!-- load jquery -->
+    <script type="text/javascript" src="../js/jquery-2.1.4.min.js"></script>
+    <!-- load datatables js library -->
+    <script type="text/javascript" src="../js/jquery.dataTables.js"></script> 
+    
+</head>
+<body>
+     
+    <table id="empTable" class="display" width="100%" cellspacing="0">
+        <thead>
+            <tr>
+
+                <th>Nom</th>
+                <th>Prenom</th>
+                <th>Adresse Courriel</th>
+                <th>Telephone</th>
+                <th>Employeur</th>
+                <th>Appartement Cherche</th>
+                
+            </tr>
+        </thead>       
+        <tfoot>
+            <tr>
+                <th>Nom</th>
+                <th>Prenom</th>
+                <th>Adresse Courriel</th>
+                <th>Telephone</th>
+                <th>Employeur</th>
+                <th>Appartement Cherche</th>
+            </tr>
+        </tfoot>
+    </table>
+<!--	{"NOM": "Tremblay", "PRENOM :": "Jack", "ADRESSE COURRIEL": "blabla@hotmail.com", "TELEPHONE": "514-555-9999", "EMPLOYEUR": "Bell", "APPARTEMENT CHERCHE": "3 1/2"},-->
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('#empTable').dataTable({
+                "ajax": "../json/data.json",
+                "columns": [                    
+                    {"data": "NOM"},
+                    {"data": "PRENOM"},
+                    {"data": "ADRESSE_COURRIEL"},
+                    {"data": "TELEPHONE"},
+                    {"data": "EMPLOYEUR"},
+                    {"data": "APPARTEMENT_CHERCHE"}
+                ]
+             });   
+        });
+        $('#example tfoot th').each( function () {
+        var title = $(this).text();
+        $(this).html( '<input type="text" placeholder="Search '+title+'" />' );
+    } ); 
+
+   
+    
+        
+    </script>
+</body>
+</html>
