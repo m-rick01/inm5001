@@ -5,6 +5,36 @@
             <title>Formulaire</title>
             <link rel="stylesheet" type="text/css" href="../css/view.css">
                 <script type="text/javascript" src="../js/view.js"></script>
+                <script type="text/javascript" src="../js/jquery-2.1.4.min.js"></script>
+
+
+                <script>
+                    $.fn.serializeObject = function () {
+                        var o = {};
+                        var a = this.serializeArray();
+                        $.each(a, function () {
+                            if (o[this.name]) {
+                                if (!o[this.name].push) {
+                                    o[this.name] = [o[this.name]];
+                                }
+                                o[this.name].push(this.value || '');
+                            } else {
+                                o[this.name] = this.value || '';
+                            }
+                        });
+                        return o;
+                    };
+
+                    $(function () {
+                        $('form.appnitro').on('submit', function (e) {
+                            e.preventDefault();
+
+                            var formData = $(this).serializeObject();
+                            console.log(formData);
+                            $('marchepas..').html(formData);
+                        });
+                    });
+                </script>
 
                 </head>
                 <body id="main_body" >
@@ -13,7 +43,7 @@
                         <div id="form_container">
 
                             <h1><a>Livrable 1</a></h1>
-                            <form id="form_1163944" class="appnitro" enctype="multipart/form-data" method="post" action="">
+                            <form id="form_1163944" class="appnitro" enctype="multipart/form-data" method="post" action="newhtml.html">
                                 <div class="form_description">
                                     <h2>Pour le candidat</h2>
                                     <p>Formulaire pour le candidat
@@ -311,7 +341,7 @@
                                 </ul>
                             </form>	
                             <div id="footer">
-                                    EPF Teck Project 
+                                EPF Tech Project 
                             </div>
                         </div>
                 </body>
