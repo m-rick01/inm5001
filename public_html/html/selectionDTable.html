@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <meta charset="UTF-8">
         <title>Display JSON File Data in Datatables | Example</title>
         <!-- link datatables css -->
         <link rel="stylesheet" type="text/css" href="../css/jquery.dataTables.css">
         <link rel="stylesheet" type="text/css" href="../css/datatableEx1.css">
         <!-- load jquery -->
-        <script type="text/javascript" src="../js/jquery-2.1.4.min.js"></script>
+        <script type="text/javascript" src="../js/jquery-2.1.4.min.js"></script> 
         <!-- load datatables js library -->
         <script type="text/javascript" src="../js/jquery.dataTables.js"></script> 
 
@@ -40,9 +41,9 @@
         <!--	{"NOM": "Tremblay", "PRENOM :": "Jack", "ADRESSE COURRIEL": "blabla@hotmail.com", "TELEPHONE": "514-555-9999", "EMPLOYEUR": "Bell", "APPARTEMENT CHERCHE": "3 1/2"},-->
 
         <script type="text/javascript">
-            $(document).ready(function () {
+            $(document).ready(function() {
                 $('#empTable').dataTable({
-                    "ajax": "../json/data.json",
+                    "ajax": "data.json" ,
                     "columns": [
                         {"data": "NOM"},
                         {"data": "PRENOM"},
@@ -52,12 +53,13 @@
                         {"data": "APPARTEMENT_CHERCHE"}
                     ]
                 });
-            });
+              });   
+            
 //            $('#example tfoot th').each(function () {
 //                var title = $(this).text();
 //                $(this).html('<input type="text" placeholder="Search ' + title + '" />');
 //            });
-
+//            
 
 
 

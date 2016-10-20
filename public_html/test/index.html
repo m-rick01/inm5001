@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Display JSON File Data in Datatables | Example</title>
+    <!-- link datatables css -->
+		<meta charset="utf-8">
+		<link rel="stylesheet" type="text/css" 
+		href="../jstree/dist/themes/default/style.min.css">
+		<script type="text/javascript" src="../js/jquery-2.1.4.min.js"></script>
+        <script type="text/javascript" src="../js/jquery.dataTables.js"></script> 
+</head>
+<body>
+    <table id="empTable" class="display" width="100%" cellspacing="0">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Designation</th>
+                <th>Office</th>
+                <th>Extension</th>
+                <th>Joining Date</th>
+                <th>Salary</th>
+            </tr>
+        </thead>
+        <tfoot>
+            <tr>
+                <th>Name</th>
+                <th>Designation</th>
+                <th>Office</th>
+                <th>Extension</th>
+                <th>Joining Date</th>
+                <th>Salary</th>
+            </tr>
+        </tfoot>
+    </table>
+    
+    
+    <script type="text/javascript">
+    $(document).ready(function() {
+        $('#empTable').dataTable({
+            "ajax": "data.json",
+            "columns": [
+                {"data": "name"},
+                {"data": "designation"},
+                {"data": "office"},
+                {"data": "extension"},
+                {"data": "joining_date"},
+                {"data": "salary"}
+            ]
+        });   
+    });
+    </script>
+</body>
+</html>
