@@ -21,7 +21,7 @@ function dessinerDataTable(jsonObject) {
 
 $(document).ready(function() {
    $.ajax({
-       url: 'todo.php',
+       url: 'todo',
         success: function (jsonObject1) {
             dessinerChart(jsonObject1);
         }
@@ -30,7 +30,7 @@ $(document).ready(function() {
    });
    
    $.ajax({
-      url: 'todo.php',
+      url: 'todo',
         success: function (jsonObject2) {
             dessinerDataTable(jsonObject2);
         }
