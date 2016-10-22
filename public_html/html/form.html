@@ -9,31 +9,12 @@
 
 
                 <script>
-                    $.fn.serializeObject = function () {
-                        var o = {};
-                        var a = this.serializeArray();
-                        $.each(a, function () {
-                            if (o[this.name]) {
-                                if (!o[this.name].push) {
-                                    o[this.name] = [o[this.name]];
-                                }
-                                o[this.name].push(this.value || '');
-                            } else {
-                                o[this.name] = this.value || '';
-                            }
-                        });
-                        return o;
-                    };
-
-                    $(function () {
-                        $('form.appnitro').on('submit', function (e) {
-                            e.preventDefault();
-
-                            var formData = $(this).serializeObject();
-                            console.log(formData);
-                            $('marchepas..').html(formData);
-                        });
-                    });
+                    var element = document.getElementById('form_1163944');
+                    var html = element.outerHTML;
+                    var data = { html: html};
+                    
+                    var json = JSON.stringify(data);
+                    var htmlToJsonString = JSON.stringify($("#form_1163944"));
                 </script>
 
                 </head>
@@ -336,7 +317,7 @@
                                     <li class="buttons">
                                         <input type="hidden" name="form_id" value="1163944" />
 
-                                        <input id="saveForm" class="button_text" type="submit" name="submit" value="Envoyer" />
+                                        <input id="saveForm" class="button_text" onclick="clicked()" type="submit" name="submit" value="Envoyer" />
                                     </li>
                                 </ul>
                             </form>	
