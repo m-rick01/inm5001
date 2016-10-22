@@ -13,7 +13,7 @@ function dessinerChart(jsonObject) {
 
 function dessinerDataTable(jsonObject) {
     var data = new google.visualization.DataTable(jsonObject);
-    var table = new google.visualization.Table(document.getElementById('dataTableId_1'));
+    var table = new google.visualization.Table(document.getElementById('dataTableId'));
     
     table.draw(data, {showRowNumber: true});
     
